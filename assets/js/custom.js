@@ -335,23 +335,24 @@ gsap.fromTo(".description", 1.8, {
 // Text scroll Animation
 // =======================
 function TextScrollFunction(selector, StartPositionX, EndPositionX) {
-  window.addEventListener("load", function () {
-    gsap.utils.toArray(selector).forEach((textanim) => {
-      gsap.set(textanim, {
-        x: StartPositionX,
-      });
-      gsap.to(textanim, {
-        scrollTrigger: {
-          trigger: textanim,
-          scrub: true,
-          markers: false,
-          start: "top 100%",
-          end: "bottom 0%",
-        },
-        x: EndPositionX,
-        duration: 1000,
-        ease: "none",
-      });
+  // window.addEventListener("load", function () {
+
+  // });
+  gsap.utils.toArray(selector).forEach((textanim) => {
+    gsap.set(textanim, {
+      x: StartPositionX,
+    });
+    gsap.to(textanim, {
+      scrollTrigger: {
+        trigger: textanim,
+        scrub: true,
+        markers: false,
+        start: "top 100%",
+        end: "bottom 0%",
+      },
+      x: EndPositionX,
+      duration: 1000,
+      ease: "none",
     });
   });
 }
