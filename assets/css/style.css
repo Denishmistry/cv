@@ -744,6 +744,8 @@ footer {
   padding: 0;
   transform: rotate(5deg);
   transform-origin: center;
+  width: calc(100% - 8px);
+  margin: 0 auto;
 }
 
 .text-animation {
@@ -1127,5 +1129,8 @@ display: none;
 
       padding: 7px 10px;
       font-size: 13px;
+  }
+  .footer-bottom{
+    flex-direction: column;
   }
 }
