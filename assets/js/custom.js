@@ -302,23 +302,23 @@ gsap.from(".Welcome-section h1", 1.8, {
 });
 
 
-gsap.utils.toArray(".whatido").forEach((box) => {
-  gsap.set(box, {
-    opacity: 0,
-    scale: 0.8,
-  });
-  gsap.to(box, {
-    scrollTrigger: {
-      trigger: box,
-      markers: false,
-      scrub: 1,
-      start: "top 60%",
-      end: "10% 60%",
-    },
-    opacity: 1,
-    scale: 1,
-  });
-});
+// gsap.utils.toArray(".whatido").forEach((box) => {
+//   gsap.set(box, {
+//     opacity: 0,
+//     scale: 0.8,
+//   });
+//   gsap.to(box, {
+//     scrollTrigger: {
+//       trigger: box,
+//       markers: false,
+//       scrub: 1,
+//       start: "top 60%",
+//       end: "10% 60%",
+//     },
+//     opacity: 1,
+//     scale: 1,
+//   });
+// });
 
 
 gsap.fromTo(".description", 1.8, {
