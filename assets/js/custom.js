@@ -334,31 +334,31 @@ gsap.fromTo(".description", 1.8, {
 // ========================
 // Text scroll Animation
 // =======================
-function TextScrollFunction(selector, StartPositionX, EndPositionX) {
-  // window.addEventListener("load", function () {
+// function TextScrollFunction(selector, StartPositionX, EndPositionX) {
+//   // window.addEventListener("load", function () {
 
-  // });
-  gsap.utils.toArray(selector).forEach((textanim) => {
-    gsap.set(textanim, {
-      x: StartPositionX,
-    });
-    gsap.to(textanim, {
-      scrollTrigger: {
-        trigger: textanim,
-        scrub: true,
-        markers: true,
-        start: "top 50%",
-        end: "top 0%",
-      },
-      x: EndPositionX,
-      duration: 1000,
-      ease: "none",
-    });
-  });
-}
-TextScrollFunction(".text1", "-100%", "0%");
-TextScrollFunction(".text2", "-100%", "-200%");
-TextScrollFunction(".project_txte", "-100%", "-200%");
+//   // });
+//   gsap.utils.toArray(selector).forEach((textanim) => {
+//     gsap.set(textanim, {
+//       x: StartPositionX,
+//     });
+//     gsap.to(textanim, {
+//       scrollTrigger: {
+//         trigger: textanim,
+//         scrub: true,
+//         markers: true,
+//         start: "top 50%",
+//         end: "top 0%",
+//       },
+//       x: EndPositionX,
+//       duration: 1000,
+//       ease: "none",
+//     });
+//   });
+// }
+// TextScrollFunction(".text1", "-100%", "0%");
+// TextScrollFunction(".text2", "-100%", "-200%");
+// TextScrollFunction(".project_txte", "-100%", "-200%");
 
 //============================
 // Text scroll Animation End
@@ -565,34 +565,34 @@ gsap.utils.toArray(".section-title .child").forEach((box) => {
   });
 });
 
-// function DeveloperImg() {
-//   const doc = this.getSVGDocument();
-//   const selcetor = doc.querySelectorAll("svg path");
+function DeveloperImg() {
+  const doc = this.getSVGDocument();
+  const selcetor = doc.querySelectorAll("svg path");
 
-//   function AnimationSVG() {
-//     gsap.from(selcetor, {
-//       opacity: 0,
-//       scaleX: 0.5,
-//       scaleY: 0.5,
-//       transformOrigin: "center",
-//       stagger: { // wrap advanced options in an object
-//         each: 0.005,
-//         from: "end",
-//         ease: "power2.inOut",
-//       }
-//     });
-//   }
+  function AnimationSVG() {
+    gsap.from(selcetor, {
+      opacity: 0,
+      scaleX: 0.5,
+      scaleY: 0.5,
+      transformOrigin: "center",
+      stagger: { // wrap advanced options in an object
+        each: 0.005,
+        from: "end",
+        ease: "power2.inOut",
+      }
+    });
+  }
 
-//   ScrollTrigger.create({
-//     trigger: '.animationimage',
-//     start: () => 'top 50%',
-//     end: () => 'top 50%',
-//     markers: false,
-//     onEnter: () => {
-//       AnimationSVG();
-//     },
-//   });
-// }
+  ScrollTrigger.create({
+    trigger: '.animationimage',
+    start: () => 'top 50%',
+    end: () => 'top 50%',
+    markers: false,
+    onEnter: () => {
+      AnimationSVG();
+    },
+  });
+}
 
 // function WhatIdo() {
 //   const doc = this.getSVGDocument();
