@@ -332,34 +332,34 @@ gsap.fromTo(".description", 1.8, {
   delay: 5,
 })
 
-//========================
+// ========================
 // Text scroll Animation
 // =======================
-// function TextScrollFunction(selector, StartPositionX, EndPositionX) {
-//   window.addEventListener("load", function () {
-//     gsap.utils.toArray(selector).forEach((textanim) => {
-//       gsap.set(textanim, {
-//         x: StartPositionX,
-//       });
-//       gsap.to(textanim, {
-//         scrollTrigger: {
-//           trigger: textanim,
-//           pin: false,
-//           scrub: true,
-//           markers: false,
-//           start: "top 100%",
-//           end: "bottom 0%",
-//         },
-//         x: EndPositionX,
-//         duration: 1000,
-//         ease: "none",
-//       });
-//     });
-//   });
-// }
-// TextScrollFunction(".text1", "-100%", "0%");
-// TextScrollFunction(".text2", "-100%", "-200%");
-// TextScrollFunction(".project_text", "-100%", "-200%");
+function TextScrollFunction(selector, StartPositionX, EndPositionX) {
+  window.addEventListener("load", function () {
+    gsap.utils.toArray(selector).forEach((textanim) => {
+      gsap.set(textanim, {
+        x: StartPositionX,
+      });
+      gsap.to(textanim, {
+        scrollTrigger: {
+          trigger: textanim,
+          pin: false,
+          scrub: true,
+          markers: false,
+          start: "top 100%",
+          end: "bottom 0%",
+        },
+        x: EndPositionX,
+        duration: 1000,
+        ease: "none",
+      });
+    });
+  });
+}
+TextScrollFunction(".text1", "-100%", "0%");
+TextScrollFunction(".text2", "-100%", "-200%");
+TextScrollFunction(".project_text", "-100%", "-200%");
 
 //============================
 // Text scroll Animation End
@@ -517,69 +517,30 @@ window.onresize = function () {
 };
 
 
-function ImageAnimation(imgSelector, divSelector, imgTransformY, divtransformY) {
-  gsap.utils.toArray(imgSelector).forEach((box) => {
-    gsap.set(box, {
-      y: imgTransformY,
-
-    });
-    gsap.to(box, {
-      ease: 'power1.out',
-      scrollTrigger: {
-        trigger: box,
-        markers: false,
-        scrub: 3,
-        start: "0% 100%",
-        end: "100% 50%",
-      },
-      y: 0,
-    });
-  });
-  gsap.utils.toArray(divSelector).forEach((box) => {
-    gsap.set(box, {
-      y: divtransformY,
-      ease: 'power1.out',
-    });
-    gsap.to(box, {
-      scrollTrigger: {
-        trigger: box,
-        markers: false,
-        scrub: 4,
-        start: "0 100%",
-        end: "100% 50%"
-      },
-      ease: 'power1.out',
-      y: 0,
-    });
-  });
-}
-ImageAnimation(".image_cont1 img", ".image_cont1", -200, 100);
-ImageAnimation(".image_cont2 img", ".image_cont2", -200, 50);
-ImageAnimation(".image_cont3 img", ".image_cont3", -200, 0);
 
 
 // SVG CALL
 
 
-gsap.utils.toArray(".introduction").forEach((box) => {
-  gsap.set(box, {
-    y: 100,
-    opacity: 0,
-    ease: 'power1.out',
-  });
-  gsap.to(box, {
-    scrollTrigger: {
-      trigger: box,
-      markers: false,
-      scrub: 1,
-      start: () => 'top 50%',
-      end: () => 'top 50%',
-    },
-    ease: 'power1.out',
-    y: 0,
-    opacity: 1
-  });
-});
+// gsap.utils.toArray(".introduction").forEach((box) => {
+//   gsap.set(box, {
+//     y: 100,
+//     opacity: 0,
+//     ease: 'power1.out',
+//   });
+//   gsap.to(box, {
+//     scrollTrigger: {
+//       trigger: box,
+//       markers: false,
+//       scrub: 1,
+//       start: () => 'top 50%',
+//       end: () => 'top 50%',
+//     },
+//     ease: 'power1.out',
+//     y: 0,
+//     opacity: 1
+//   });
+// });
 
 gsap.utils.toArray(".section-title .child").forEach((box) => {
   gsap.set(box, {
