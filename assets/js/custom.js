@@ -460,10 +460,12 @@ window.onresize = function () {
   split.revert();
 
   //KILL SCROLL TRIGGER
-  let triggers = ScrollTrigger.getAll();
-  triggers.forEach(trigger => {
-    trigger.kill();
-  });
+  // let triggers = ScrollTrigger.getAll();
+  // console.log(ScrollTrigger);
+  // triggers.forEach(trigger => {
+  //   trigger.kill();
+  //   console.log("adss");
+  // });
 
   //SPLIT TEXT AGAIN
   split.split();
@@ -621,7 +623,8 @@ function TextScrollFunction(selector, StartPositionX, EndPositionX) {
 }
 TextScrollFunction(".text1", "-100%", "0%");
 TextScrollFunction(".text2", "-100%", "-200%");
-TextScrollFunction(".project_txte", "-100%", "-200%");
+TextScrollFunction(".project_text", "-100%", "-200%");
+
 const refs = [...document.querySelectorAll(`[data-svg]`)];
 for (let i = 0; i < refs.length; i++) {
   refs[i].addEventListener("load", window[refs[i].getAttribute("data-svg")]);
