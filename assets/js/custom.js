@@ -346,7 +346,6 @@ function TextScrollFunction(selector, StartPositionX, EndPositionX) {
       scrollTrigger: {
         trigger: textanim,
         scrub: true,
-        endTrigger: ".whatido",
         markers: true,
         start: "top 50%",
         end: "top 0%",
