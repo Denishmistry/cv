@@ -1,15 +1,4 @@
 //  ==================
-//      Pre-Loader
-//  ==================
-$(window).on("load", function () {
-  $("#loading-mask").fadeOut();
-});
-//  ==================
-//      Pre-Loader
-//  ==================
-
-
-//  ==================
 //    Custom cursor
 //  ==================
 $(window).on("load resize", function () {
@@ -38,7 +27,6 @@ $(window).on("load resize", function () {
       });
     });
   }
-
 });
 
 
@@ -62,11 +50,6 @@ ScrollTrigger.create({
 });
 
 
-//=================
-//  Home section
-// ================
-
-
 
 //======================
 // expiriance section
@@ -88,27 +71,6 @@ if (window.innerWidth > 1200) {
     });
   });
 
-
-  // gsap.utils.toArray(".expirince-list li div").forEach((box) => {
-  //   gsap.set(box, {
-
-  //     skewType:"simple",
-  //     skewX:-90,
-  //     opacity:0,
-
-  //   });
-  //   gsap.to(box, {
-  //     scrollTrigger: {
-  //       trigger: box,
-  //       markers: false,
-  //       scrub: 4,
-  //       start: "0% 70%",
-  //       end: "10% 70%",
-  //     },
-  //     skewX:0,
-  //     opacity:1,
-  //   });
-  // });
 }
 
 // =============
@@ -262,14 +224,9 @@ let tltransition = new TimelineMax({
   }, '-=0.35')
 
 
-
-
-// $button.addEventListener('click', () => {
-//   tltransition.play(0);
-// });
 window.addEventListener("load", (event) => {
   tltransition.play(0);
-  // console.log("page is fully loaded");
+
 });
 
 
@@ -378,41 +335,35 @@ gsap.fromTo(".description", 1.8, {
 //========================
 // Text scroll Animation
 // =======================
-function TextScrollFunction(selector, StartPositionX, EndPositionX) {
-  window.addEventListener("load", function () {
-    gsap.utils.toArray(selector).forEach((textanim) => {
-      gsap.set(textanim, {
-        x: StartPositionX,
-      });
-      gsap.to(textanim, {
-        scrollTrigger: {
-          trigger: textanim,
-          pin: false,
-          scrub: true,
-          markers: false,
-          start: "top 100%",
-          end: "bottom 0%",
-        },
-        x: EndPositionX,
-        duration: 1000,
-        ease: "none",
-      });
-    });
-  });
-}
-TextScrollFunction(".text1", "-100%", "0%");
-TextScrollFunction(".text2", "-100%", "-200%");
-TextScrollFunction(".project_text", "-100%", "-200%");
+// function TextScrollFunction(selector, StartPositionX, EndPositionX) {
+//   window.addEventListener("load", function () {
+//     gsap.utils.toArray(selector).forEach((textanim) => {
+//       gsap.set(textanim, {
+//         x: StartPositionX,
+//       });
+//       gsap.to(textanim, {
+//         scrollTrigger: {
+//           trigger: textanim,
+//           pin: false,
+//           scrub: true,
+//           markers: false,
+//           start: "top 100%",
+//           end: "bottom 0%",
+//         },
+//         x: EndPositionX,
+//         duration: 1000,
+//         ease: "none",
+//       });
+//     });
+//   });
+// }
+// TextScrollFunction(".text1", "-100%", "0%");
+// TextScrollFunction(".text2", "-100%", "-200%");
+// TextScrollFunction(".project_text", "-100%", "-200%");
 
 //============================
 // Text scroll Animation End
 // =======================
-
-
-
-
-
-
 
 var popoverbox = document.querySelectorAll(".img_work_outer>.popupebox");
 document.addEventListener('mousemove', (obj) => {
@@ -436,27 +387,25 @@ hover.forEach(e => e.addEventListener("mouseout", () => mouseOut(e)));
 
 function mouseOver(e) {
 
-    e.classList.add("active");
-
-
-    var index = 0;
-const slides = document.querySelectorAll(".img_work_outer.active > .popupebox .slides");
-const classHide = "slides-hidden",
-count = slides.length;
-// console.log(count);
-function nextSlide() {
-  slides[(index ++) % count].classList.add(classHide);
-  slides[index % count].classList.remove(classHide);
-  setTimeout(nextSlide, 4000);
-}
-nextSlide();
+  e.classList.add("active");
+  var index = 0;
+  const slides = document.querySelectorAll(".img_work_outer.active > .popupebox .slides");
+  const classHide = "slides-hidden",
+    count = slides.length;
+  // console.log(count);
+  function nextSlide() {
+    slides[(index++) % count].classList.add(classHide);
+    slides[index % count].classList.remove(classHide);
+    setTimeout(nextSlide, 4000);
+  }
+  nextSlide();
 }
 
 function mouseOut(e) {
-    e.classList.remove("active");
+  e.classList.remove("active");
 }
 
-// });
+
 
 
 
