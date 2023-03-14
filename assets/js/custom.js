@@ -346,9 +346,9 @@ function TextScrollFunction(selector, StartPositionX, EndPositionX) {
       scrollTrigger: {
         trigger: textanim,
         scrub: true,
-        markers: false,
-        start: "top 100%",
-        end: "bottom 0%",
+        markers: true,
+        start: "top 50%",
+        end: "top 0%",
       },
       x: EndPositionX,
       duration: 1000,
