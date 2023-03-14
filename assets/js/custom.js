@@ -566,34 +566,34 @@ gsap.utils.toArray(".section-title .child").forEach((box) => {
   });
 });
 
-function DeveloperImg() {
-  const doc = this.getSVGDocument();
-  const selcetor = doc.querySelectorAll("svg path");
+// function DeveloperImg() {
+//   const doc = this.getSVGDocument();
+//   const selcetor = doc.querySelectorAll("svg path");
 
-  function AnimationSVG() {
-    gsap.from(selcetor, {
-      opacity: 0,
-      scaleX: 0.5,
-      scaleY: 0.5,
-      transformOrigin: "center",
-      stagger: { // wrap advanced options in an object
-        each: 0.005,
-        from: "end",
-        ease: "power2.inOut",
-      }
-    });
-  }
+//   function AnimationSVG() {
+//     gsap.from(selcetor, {
+//       opacity: 0,
+//       scaleX: 0.5,
+//       scaleY: 0.5,
+//       transformOrigin: "center",
+//       stagger: { // wrap advanced options in an object
+//         each: 0.005,
+//         from: "end",
+//         ease: "power2.inOut",
+//       }
+//     });
+//   }
 
-  ScrollTrigger.create({
-    trigger: '.animationimage',
-    start: () => 'top 50%',
-    end: () => 'top 50%',
-    markers: false,
-    onEnter: () => {
-      AnimationSVG();
-    },
-  });
-}
+//   ScrollTrigger.create({
+//     trigger: '.animationimage',
+//     start: () => 'top 50%',
+//     end: () => 'top 50%',
+//     markers: false,
+//     onEnter: () => {
+//       AnimationSVG();
+//     },
+//   });
+// }
 
 function WhatIdo() {
   const doc = this.getSVGDocument();
