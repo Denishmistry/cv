@@ -595,32 +595,32 @@ gsap.utils.toArray(".section-title .child").forEach((box) => {
 //   });
 // }
 
-function WhatIdo() {
-  const doc = this.getSVGDocument();
-  const selcetor = doc.querySelectorAll("svg #Group_212 g");
+// function WhatIdo() {
+//   const doc = this.getSVGDocument();
+//   const selcetor = doc.querySelectorAll("svg #Group_212 g");
 
-  gsap.utils.toArray(selcetor).forEach((box) => {
-    gsap.set(box, {
-      x: 100,
-      opacity: 0,
-      scaleX: 1.6,
-      ease: 'power1.out',
-    });
-    gsap.to(box, {
-      scrollTrigger: {
-        trigger: ".whatidoimg",
-        markers: false,
-        scrub: 3,
-        start: () => 'top 90%',
-        end: () => 'top 50%',
-      },
-      ease: 'power1.out',
-      x: 0,
-      scaleX: 1,
-      opacity: 1
-    });
-  });
-}
+//   gsap.utils.toArray(selcetor).forEach((box) => {
+//     gsap.set(box, {
+//       x: 100,
+//       opacity: 0,
+//       scaleX: 1.6,
+//       ease: 'power1.out',
+//     });
+//     gsap.to(box, {
+//       scrollTrigger: {
+//         trigger: ".whatidoimg",
+//         markers: false,
+//         scrub: 3,
+//         start: () => 'top 90%',
+//         end: () => 'top 50%',
+//       },
+//       ease: 'power1.out',
+//       x: 0,
+//       scaleX: 1,
+//       opacity: 1
+//     });
+//   });
+// }
 const refs = [...document.querySelectorAll(`[data-svg]`)];
 for (let i = 0; i < refs.length; i++) {
   refs[i].addEventListener("load", window[refs[i].getAttribute("data-svg")]);
