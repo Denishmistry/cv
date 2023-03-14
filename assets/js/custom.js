@@ -346,6 +346,7 @@ function TextScrollFunction(selector, StartPositionX, EndPositionX) {
       scrollTrigger: {
         trigger: textanim,
         scrub: true,
+        endTrigger: ".whatido",
         markers: true,
         start: "top 50%",
         end: "top 0%",
@@ -358,7 +359,7 @@ function TextScrollFunction(selector, StartPositionX, EndPositionX) {
 }
 TextScrollFunction(".text1", "-100%", "0%");
 TextScrollFunction(".text2", "-100%", "-200%");
-TextScrollFunction(".project_text", "-100%", "-200%");
+TextScrollFunction(".project_txte", "-100%", "-200%");
 
 //============================
 // Text scroll Animation End
