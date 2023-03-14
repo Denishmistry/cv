@@ -331,34 +331,7 @@ gsap.fromTo(".description", 1.8, {
   delay: 5,
 })
 
-// ========================
-// Text scroll Animation
-// =======================
-function TextScrollFunction(selector, StartPositionX, EndPositionX) {
-  window.addEventListener("load", function () {
-    gsap.utils.toArray(selector).forEach((textanim) => {
-      gsap.set(textanim, {
-        x: StartPositionX,
-      });
-      gsap.to(textanim, {
-        scrollTrigger: {
-          trigger: textanim,
-          pin: false,
-          scrub: true,
-          markers: false,
-          start: "top 100%",
-          end: "bottom 0%",
-        },
-        x: EndPositionX,
-        duration: 1000,
-        ease: "none",
-      });
-    });
-  });
-}
-TextScrollFunction(".text1", "-100%", "0%");
-TextScrollFunction(".text2", "-100%", "-200%");
-TextScrollFunction(".project_txte", "-100%", "-200%");
+
 
 //============================
 // Text scroll Animation End
@@ -620,6 +593,35 @@ function DeveloperImg() {
 //     });
 //   });
 // }
+
+// ========================
+// Text scroll Animation
+// =======================
+function TextScrollFunction(selector, StartPositionX, EndPositionX) {
+  window.addEventListener("load", function () {
+    gsap.utils.toArray(selector).forEach((textanim) => {
+      gsap.set(textanim, {
+        x: StartPositionX,
+      });
+      gsap.to(textanim, {
+        scrollTrigger: {
+          trigger: textanim,
+          pin: false,
+          scrub: true,
+          markers: false,
+          start: "top 100%",
+          end: "bottom 0%",
+        },
+        x: EndPositionX,
+        duration: 1000,
+        ease: "none",
+      });
+    });
+  });
+}
+TextScrollFunction(".text1", "-100%", "0%");
+TextScrollFunction(".text2", "-100%", "-200%");
+TextScrollFunction(".project_txte", "-100%", "-200%");
 const refs = [...document.querySelectorAll(`[data-svg]`)];
 for (let i = 0; i < refs.length; i++) {
   refs[i].addEventListener("load", window[refs[i].getAttribute("data-svg")]);
