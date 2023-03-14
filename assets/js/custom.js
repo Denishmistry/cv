@@ -301,7 +301,6 @@ gsap.from(".Welcome-section h1", 1.8, {
   delay: 4,
 });
 
-
 // gsap.utils.toArray(".whatido").forEach((box) => {
 //   gsap.set(box, {
 //     opacity: 0,
@@ -344,7 +343,6 @@ function TextScrollFunction(selector, StartPositionX, EndPositionX) {
       gsap.to(textanim, {
         scrollTrigger: {
           trigger: textanim,
-          pin: false,
           scrub: true,
           markers: false,
           start: "top 100%",
