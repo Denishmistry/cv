@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2410.063" height="1805.597" viewBox="0 0 2410.063 1805.597">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(206,116,239,0.08);
+      }
+
+      .cls-2 {
+        fill: rgba(186,173,239,0.2);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: rgba(252,252,160,0.15);
+      }
+
+      .cls-5 {
+        fill: rgba(105,219,153,0.09);
+      }
+
+      .cls-6 {
+        filter: url(#Ellipse_5);
+      }
+
+      .cls-7 {
+        filter: url(#Ellipse_4);
+      }
+
+      .cls-8 {
+        filter: url(#Ellipse_3);
+      }
+    </style>
+    <filter id="Ellipse_3" x="1302.277" y="226.292" width="1022" height="1021" filterUnits="userSpaceOnUse">
+      <feOffset dx="80" dy="80" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feFlood flood-color="#fff"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_4" x="203.348" y="859.871" width="809.879" height="809.879" filterUnits="userSpaceOnUse">
+      <feOffset dx="44" dy="80" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="40" result="blur-2"/>
+      <feFlood flood-color="#9494fc" flood-opacity="0.012" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_5" x="0" y="0" width="1182.981" height="1182.981" filterUnits="userSpaceOnUse">
+      <feOffset dx="80" dy="80" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="40" result="blur-3"/>
+      <feFlood flood-color="#fff"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(976.277 852.292)">
+    <g class="cls-8" transform="matrix(1, 0, 0, 1, -976.28, -852.29)">
+      <ellipse id="Ellipse_3-2" data-name="Ellipse 3" class="cls-1" cx="241" cy="240.5" rx="241" ry="240.5" transform="translate(1492.28 416.29)"/>
+    </g>
+    <g data-type="innerShadowGroup">
+      <circle id="Ellipse_4-2" data-name="Ellipse 4" class="cls-2" cx="146.92" cy="146.92" r="146.92" transform="matrix(-0.259, -0.966, 0.966, -0.259, -471.878, 592.458)"/>
+      <g class="cls-7" transform="matrix(1, 0, 0, 1, -976.28, -852.29)">
+        <circle id="Ellipse_4-3" data-name="Ellipse 4" class="cls-3" cx="146.92" cy="146.92" r="146.92" transform="matrix(-0.26, -0.97, 0.97, -0.26, 504.4, 1444.75)"/>
+      </g>
+    </g>
+    <circle id="Ellipse_6" data-name="Ellipse 6" class="cls-4" cx="172.106" cy="172.106" r="172.106" transform="matrix(-0.259, -0.966, 0.966, -0.259, 876.302, 728.304)"/>
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, -976.28, -852.29)">
+      <circle id="Ellipse_5-2" data-name="Ellipse 5" class="cls-5" cx="185.166" cy="185.166" r="185.166" transform="matrix(-0.31, -0.95, 0.95, -0.31, 392.61, 744.81)"/>
+    </g>
+  </g>
+</svg>
