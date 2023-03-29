@@ -29,27 +29,25 @@ $(window).on("load resize", function () {
   }
 });
 
-
-
 //=========================
 //  Header Sticky top
 // ==========================
 
-const showAnim = gsap.from('header', {
-  yPercent: -100,
-  paused: true,
-  duration: 0.2
-}).progress(1);
+const showAnim = gsap
+  .from("header", {
+    yPercent: -100,
+    paused: true,
+    duration: 0.2,
+  })
+  .progress(1);
 
 ScrollTrigger.create({
   start: "top top",
   end: 99999,
   onUpdate: (self) => {
-    self.direction === -1 ? showAnim.play() : showAnim.reverse()
-  }
+    self.direction === -1 ? showAnim.play() : showAnim.reverse();
+  },
 });
-
-
 
 //======================
 // expiriance section
@@ -57,7 +55,6 @@ ScrollTrigger.create({
 
 if (window.innerWidth > 1200) {
   gsap.utils.toArray(".expirince-list li").forEach((box) => {
-
     gsap.to(box, {
       scrollTrigger: {
         trigger: box,
@@ -67,10 +64,8 @@ if (window.innerWidth > 1200) {
         start: "0% 45%",
         end: "100% 50%",
       },
-
     });
   });
-
 }
 
 // =============
@@ -90,7 +85,7 @@ function BrainImage() {
     gsap.set(box, {
       strokeDasharray: 330,
       strokeDashoffset: 330,
-      opacity: 0.3
+      opacity: 0.3,
     });
     gsap.to(box, {
       scrollTrigger: {
@@ -109,7 +104,7 @@ function BrainImage() {
     gsap.set(box, {
       strokeDasharray: 164,
       strokeDashoffset: 164,
-      opacity: 0.3
+      opacity: 0.3,
     });
     gsap.to(box, {
       scrollTrigger: {
@@ -120,14 +115,14 @@ function BrainImage() {
         end: "100% 30%",
       },
       strokeDashoffset: 0,
-      opacity: 0.3
+      opacity: 0.3,
     });
   });
   gsap.utils.toArray(outline).forEach((box) => {
     gsap.set(box, {
       strokeDasharray: 880,
       strokeDashoffset: 880,
-      opacity: 0.3
+      opacity: 0.3,
     });
     gsap.to(box, {
       scrollTrigger: {
@@ -145,7 +140,7 @@ function BrainImage() {
     gsap.set(box, {
       strokeDasharray: 227,
       strokeDashoffset: 227,
-      opacity: 0.3
+      opacity: 0.3,
     });
     gsap.to(box, {
       scrollTrigger: {
@@ -161,74 +156,99 @@ function BrainImage() {
   });
 }
 
-
-
-
-
 // ================
 // page transition
 // ================
-const $header = document.querySelector('header');
-const $main = document.querySelector('.profile-page');
-const $logo = document.querySelector('.transition__logo');
-const $frameBlack = document.querySelector('.page-transition__black');
-const $frameRed = document.querySelector('.page-transition__seondary');
-const $button = document.querySelector('#button');
+const $header = document.querySelector("header");
+const $main = document.querySelector(".profile-page");
+const $logo = document.querySelector(".transition__logo");
+const $frameBlack = document.querySelector(".page-transition__black");
+const $frameRed = document.querySelector(".page-transition__seondary");
+const $button = document.querySelector("#button");
 
 let tltransition = new TimelineMax({
-    paused: true
-  })
-  .fromTo($frameRed, 1.3, {
-    scaleX: 0
-  }, {
-    scaleX: 1,
-    transformOrigin: 'left',
-    ease: Power4.easeInOut
-  }, )
-  .fromTo($frameBlack, 1.3, {
-    scaleX: 0
-  }, {
-    scaleX: 1,
-    transformOrigin: 'left',
-    ease: Power4.easeInOut
-  }, .1)
-  .fromTo($logo, 1.6, {
-    xPercent: -150,
-    autoAlpha: 0
-  }, {
-    xPercent: -50,
-    autoAlpha: 1,
-    ease: Power4.easeInOut
-  }, .1)
+  paused: true,
+})
+  .fromTo(
+    $frameRed,
+    1.3,
+    {
+      scaleX: 0,
+    },
+    {
+      scaleX: 1,
+      transformOrigin: "left",
+      ease: Power4.easeInOut,
+    }
+  )
+  .fromTo(
+    $frameBlack,
+    1.3,
+    {
+      scaleX: 0,
+    },
+    {
+      scaleX: 1,
+      transformOrigin: "left",
+      ease: Power4.easeInOut,
+    },
+    0.1
+  )
+  .fromTo(
+    $logo,
+    1.6,
+    {
+      xPercent: -150,
+      autoAlpha: 0,
+    },
+    {
+      xPercent: -50,
+      autoAlpha: 1,
+      ease: Power4.easeInOut,
+    },
+    0.1
+  )
   .set($frameRed, {
-    scaleX: 0
-  }).fromTo($main, {
-    autoAlpha: 0
-  }, {
-    autoAlpha: 1,
-    ease: Power4.easeInOut
-  }).fromTo($header, {
-    autoAlpha: 0
-  }, {
-    autoAlpha: 1,
-    ease: Power4.easeInOut
+    scaleX: 0,
   })
+  .fromTo(
+    $main,
+    {
+      autoAlpha: 0,
+    },
+    {
+      autoAlpha: 1,
+      ease: Power4.easeInOut,
+    }
+  )
+  .fromTo(
+    $header,
+    {
+      autoAlpha: 0,
+    },
+    {
+      autoAlpha: 1,
+      ease: Power4.easeInOut,
+    }
+  )
   // .set($img2, {autoAlpha:0})
   .to($frameBlack, 0.8, {
     scaleX: 0,
-    transformOrigin: 'right',
-    ease: Power4.easeInOut
+    transformOrigin: "right",
+    ease: Power4.easeInOut,
   })
-  .to($logo, .2, {
-    autoAlpha: 0
-  }, '-=0.35')
-
+  .to(
+    $logo,
+    0.2,
+    {
+      autoAlpha: 0,
+    },
+    "-=0.35"
+  );
 
 window.addEventListener("load", (event) => {
   tltransition.play(0);
-
 });
-
 
 // ==================
 // Section fade out
@@ -236,7 +256,7 @@ window.addEventListener("load", (event) => {
 
 gsap.utils.toArray(".Welcome-section").forEach((box) => {
   gsap.set(box, {
-    opacity: 1
+    opacity: 1,
   });
   gsap.to(box, {
     scrollTrigger: {
@@ -246,14 +266,11 @@ gsap.utils.toArray(".Welcome-section").forEach((box) => {
       start: "30% 30%",
       end: "60% 0%",
     },
-    opacity: 0.6
+    opacity: 0.6,
   });
 });
 
-
-
 // splitting character
-
 
 (function ($, undefined) {
   "use strict";
@@ -273,7 +290,9 @@ gsap.utils.toArray(".Welcome-section").forEach((box) => {
       for (var i = 0, len = text.length; i < len; i++) {
         var j = i + 1;
         if (settings.nested) {
-          text[i] = `<span class="outer-text"> <span class= "child char-${i}">${text[i]}</span></span>`;
+          text[
+            i
+          ] = `<span class="outer-text"> <span class= "child char-${i}">${text[i]}</span></span>`;
         } else {
           text[i] = `<span class="child char-${i}">${text[i]}</span>`;
         }
@@ -292,7 +311,6 @@ $(".title-animation ").splittingcharfn({
   splittingchar: false,
   nested: true,
 });
-
 
 gsap.from(".Welcome-section h1", 1.8, {
   y: 200,
@@ -319,84 +337,71 @@ gsap.from(".Welcome-section h1", 1.8, {
 //   });
 // });
 
-
-gsap.fromTo(".description", 1.8, {
-  x: -290,
-  y: 100,
-  opacity: 0,
-}, {
-  y: 0,
-  opacity: 1,
-  ease: "power4.out",
-  delay: 5,
-})
-
-
+gsap.fromTo(
+  ".description",
+  1.8,
+  {
+    // x: -290,
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    ease: "power4.out",
+    delay: 5,
+  }
+);
 
 //============================
 // Text scroll Animation End
 // =======================
 
 var popoverbox = document.querySelectorAll(".img_work_outer>.popupebox");
-document.addEventListener('mousemove', (obj) => {
-  popoverbox.forEach(pobox => {
-
-
+document.addEventListener("mousemove", (obj) => {
+  popoverbox.forEach((pobox) => {
     var x = obj.clientX;
     var y = obj.clientY;
     pobox.style.left = `calc(${obj.clientX}px - 0px)`;
     pobox.style.top = `calc(${obj.clientY}px + 20px)`;
   });
-
 });
 
-
-var hover = document.querySelectorAll('.img_work_outer');
+var hover = document.querySelectorAll(".img_work_outer");
 
 // The functions are cointained inside another one to prevent execution on load.
-hover.forEach(e => e.addEventListener("mouseover", () => mouseOver(e)));
-hover.forEach(e => e.addEventListener("mouseout", () => mouseOut(e)));
+hover.forEach((e) => e.addEventListener("mouseover", () => mouseOver(e)));
+hover.forEach((e) => e.addEventListener("mouseout", () => mouseOut(e)));
 
 function mouseOver(e) {
-
   e.classList.add("active");
-  var index = 0;
-  const slides = document.querySelectorAll(".img_work_outer.active > .popupebox .slides");
-  const classHide = "slides-hidden",
-    count = slides.length;
-  // console.log(count);
-  function nextSlide() {
-    slides[(index++) % count].classList.add(classHide);
-    slides[index % count].classList.remove(classHide);
-    setTimeout(nextSlide, 4000);
-  }
-  nextSlide();
+  setTimeout(() => {
+    var index = 0;
+    const slides = document.querySelectorAll(
+      ".img_work_outer.active > .popupebox .slides"
+    );
+    const classHide = "slides-hidden",
+      count = slides.length;
+    // console.log(count);
+  
+    function nextSlide() {
+      slides[index++ % count].classList.add(classHide);
+      slides[index % count].classList.remove(classHide);
+      setTimeout(nextSlide, 2000);
+    }
+    nextSlide();
+  }, 400);
+
 }
 
 function mouseOut(e) {
   e.classList.remove("active");
 }
-
-
-
-
-
-
-
-
-
-
-
-
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
 
 //====== Introduction text highlighter ======//
 // https://codepen.io/hexagoncircle/pen/gOPMwvd
 //====== Introduction text highlighter ======//
-
-
-
-
-
 
 // gsap.utils.toArray(".Welcome-section h1 span").forEach((box) => {
 //   gsap.set(box, {
@@ -416,24 +421,21 @@ function mouseOut(e) {
 //   });
 // });
 
-
-
 // ==================
 // spliting text
 // =================
 
 // https://web.dev/building-split-text-animations/
 
-
 // https://github.com/jeremyharris/split_lines
 
-const split = new SplitType('.paragraphs', {
-  types: 'lines'
-})
+const split = new SplitType(".paragraphs", {
+  types: "lines",
+});
 
 // Animate characters into view with a stagger effect
 gsap.config({
-  trialWarn: false
+  trialWarn: false,
 });
 
 split.lines.forEach((target) => {
@@ -445,17 +447,12 @@ split.lines.forEach((target) => {
       markers: false,
       scrub: 1,
       start: "top 70%",
-      end: "bottom 70%"
-    }
+      end: "bottom 70%",
+    },
   });
 });
 
-
-
-
 window.onresize = function () {
-
-
   //REVERSE SPLIT TEXT
   split.revert();
 
@@ -470,7 +467,6 @@ window.onresize = function () {
   //SPLIT TEXT AGAIN
   split.split();
 
-
   //RE-ADD SCROLL TRIGGER
   split.lines.forEach((target) => {
     gsap.to(target, {
@@ -481,20 +477,13 @@ window.onresize = function () {
         markers: false,
         scrub: 1,
         start: "top center",
-        end: "bottom center"
-      }
+        end: "bottom center",
+      },
     });
   });
-
-
-
 };
 
-
-
-
 // SVG CALL
-
 
 // gsap.utils.toArray(".introduction").forEach((box) => {
 //   gsap.set(box, {
@@ -522,21 +511,21 @@ gsap.utils.toArray(".section-title .child").forEach((box) => {
     opacity: 0,
     skewX: -50,
     skewY: 50,
-    ease: 'power1.out',
+    ease: "power1.out",
   });
   gsap.to(box, {
     scrollTrigger: {
       trigger: box,
       markers: false,
       scrub: 1,
-      start: () => 'top 70%',
-      end: () => 'top 70%',
+      start: () => "top 70%",
+      end: () => "top 70%",
     },
-    ease: 'power1.out',
+    ease: "power1.out",
     y: 0,
     skewX: 0,
     skewY: 0,
-    opacity: 1
+    opacity: 1,
   });
 });
 
@@ -550,18 +539,19 @@ function DeveloperImg() {
       scaleX: 0.5,
       scaleY: 0.5,
       transformOrigin: "center",
-      stagger: { // wrap advanced options in an object
+      stagger: {
+        // wrap advanced options in an object
         each: 0.005,
         from: "end",
         ease: "power2.inOut",
-      }
+      },
     });
   }
 
   ScrollTrigger.create({
-    trigger: '.animationimage',
-    start: () => 'top 50%',
-    end: () => 'top 50%',
+    trigger: ".animationimage",
+    start: () => "top 50%",
+    end: () => "top 50%",
     markers: false,
     onEnter: () => {
       AnimationSVG();
@@ -569,32 +559,32 @@ function DeveloperImg() {
   });
 }
 
-// function WhatIdo() {
-//   const doc = this.getSVGDocument();
-//   const selcetor = doc.querySelectorAll("svg #Group_212 g");
+function WhatIdo() {
+  const doc = this.getSVGDocument();
+  const selcetor = doc.querySelectorAll("svg #Group_212 g");
 
-//   gsap.utils.toArray(selcetor).forEach((box) => {
-//     gsap.set(box, {
-//       x: 100,
-//       opacity: 0,
-//       scaleX: 1.6,
-//       ease: 'power1.out',
-//     });
-//     gsap.to(box, {
-//       scrollTrigger: {
-//         trigger: ".whatidoimg",
-//         markers: false,
-//         scrub: 3,
-//         start: () => 'top 90%',
-//         end: () => 'top 50%',
-//       },
-//       ease: 'power1.out',
-//       x: 0,
-//       scaleX: 1,
-//       opacity: 1
-//     });
-//   });
-// }
+  gsap.utils.toArray(selcetor).forEach((box) => {
+    gsap.set(box, {
+      x: 100,
+      opacity: 0,
+      scaleX: 1.6,
+      ease: "power1.out",
+    });
+    gsap.to(box, {
+      scrollTrigger: {
+        trigger: ".whatidoimg",
+        markers: false,
+        scrub: 3,
+        start: () => "top 90%",
+        end: () => "top 50%",
+      },
+      ease: "power1.out",
+      x: 0,
+      scaleX: 1,
+      opacity: 1,
+    });
+  });
+}
 
 // ========================
 // Text scroll Animation
@@ -629,3 +619,4 @@ const refs = [...document.querySelectorAll(`[data-svg]`)];
 for (let i = 0; i < refs.length; i++) {
   refs[i].addEventListener("load", window[refs[i].getAttribute("data-svg")]);
 }
+// https://www.milena-alexandrova.com/

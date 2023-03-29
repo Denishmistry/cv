@@ -506,7 +506,7 @@ footer {
 
 .nav a {
   color: var(--font-color);
-  font-weight: 400;
+  font-weight: 300;
   font-size: 0.9rem;
   padding: 0;
   margin-right: 20px;
@@ -554,10 +554,16 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+.footer-bottom .h2{
+  margin-bottom: 0;
+}
 .nav.page-links ,.nav.internal-links{
   display: flex;
   list-style: none;
   padding-left: 0;
+}
+.page-links{
+  margin-top: 3px;
 }
 .footer-top h3{
   font-size: 32px;
@@ -565,6 +571,10 @@ footer {
 }
 .footer-top  .p{
   margin-top: 0;
+}
+.footer-copyright{
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 /* social icons */
 .social-links {
@@ -852,6 +862,7 @@ object.animationimage:hover #Path_109 {
 .whatido {
   /* max-width: 200px; */
   padding: 100px 0;
+  position: relative;
 }
 .whatido p{
   color: var(--font-color);
@@ -948,6 +959,7 @@ object.animationimage:hover #Path_109 {
   border-top: 1px solid #494949;
   border-bottom: 1px solid #494949;
   padding: 15px 0;
+  transition: all ease 0.5s;
 }
 .img_work_outer:hover{
   background-color: #161616;
@@ -963,6 +975,7 @@ object.animationimage:hover #Path_109 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all ease 0.5s;
 }
 .project_detail a{
   color: #fff;
