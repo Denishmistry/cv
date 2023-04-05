@@ -167,15 +167,13 @@ const $frameRed = document.querySelector(".page-transition__seondary");
 const $button = document.querySelector("#button");
 
 let tltransition = new TimelineMax({
-  paused: true,
-})
+    paused: true,
+  })
   .fromTo(
     $frameRed,
-    1.3,
-    {
+    1.3, {
       scaleX: 0,
-    },
-    {
+    }, {
       scaleX: 1,
       transformOrigin: "left",
       ease: Power4.easeInOut,
@@ -183,11 +181,9 @@ let tltransition = new TimelineMax({
   )
   .fromTo(
     $frameBlack,
-    1.3,
-    {
+    1.3, {
       scaleX: 0,
-    },
-    {
+    }, {
       scaleX: 1,
       transformOrigin: "left",
       ease: Power4.easeInOut,
@@ -196,12 +192,10 @@ let tltransition = new TimelineMax({
   )
   .fromTo(
     $logo,
-    1.6,
-    {
+    1.6, {
       xPercent: -150,
       autoAlpha: 0,
-    },
-    {
+    }, {
       xPercent: -50,
       autoAlpha: 1,
       ease: Power4.easeInOut,
@@ -212,21 +206,17 @@ let tltransition = new TimelineMax({
     scaleX: 0,
   })
   .fromTo(
-    $main,
-    {
+    $main, {
       autoAlpha: 0,
-    },
-    {
+    }, {
       autoAlpha: 1,
       ease: Power4.easeInOut,
     }
   )
   .fromTo(
-    $header,
-    {
+    $header, {
       autoAlpha: 0,
-    },
-    {
+    }, {
       autoAlpha: 1,
       ease: Power4.easeInOut,
     }
@@ -239,8 +229,7 @@ let tltransition = new TimelineMax({
   })
   .to(
     $logo,
-    0.2,
-    {
+    0.2, {
       autoAlpha: 0,
     },
     "-=0.35"
@@ -254,21 +243,21 @@ window.addEventListener("load", (event) => {
 // Section fade out
 // ==================
 
-gsap.utils.toArray(".Welcome-section").forEach((box) => {
-  gsap.set(box, {
-    opacity: 1,
-  });
-  gsap.to(box, {
-    scrollTrigger: {
-      trigger: box,
-      markers: false,
-      scrub: 4,
-      start: "30% 30%",
-      end: "60% 0%",
-    },
-    opacity: 0.6,
-  });
-});
+// gsap.utils.toArray(".Welcome-section").forEach((box) => {
+//   gsap.set(box, {
+//     opacity: 1,
+//   });
+//   gsap.to(box, {
+//     scrollTrigger: {
+//       trigger: box,
+//       markers: false,
+//       scrub: 4,
+//       start: "30% 30%",
+//       end: "60% 0%",
+//     },
+//     opacity: 0.6,
+//   });
+// });
 
 // splitting character
 
@@ -319,33 +308,31 @@ gsap.from(".Welcome-section h1", 1.8, {
   delay: 4,
 });
 
-// gsap.utils.toArray(".whatido").forEach((box) => {
-//   gsap.set(box, {
-//     opacity: 0,
-//     scale: 0.8,
-//   });
-//   gsap.to(box, {
-//     scrollTrigger: {
-//       trigger: box,
-//       markers: false,
-//       scrub: 1,
-//       start: "top 60%",
-//       end: "10% 60%",
-//     },
-//     opacity: 1,
-//     scale: 1,
-//   });
-// });
+gsap.utils.toArray(".whatido").forEach((box) => {
+  gsap.set(box, {
+    opacity: 0,
+    scale: 0.8,
+  });
+  gsap.to(box, {
+    scrollTrigger: {
+      trigger: box,
+      markers: false,
+      scrub: 1,
+      start: "top 60%",
+      end: "10% 60%",
+    },
+    opacity: 1,
+    scale: 1,
+  });
+});
 
 gsap.fromTo(
   ".description",
-  1.8,
-  {
+  1.8, {
     // x: -290,
     y: 100,
     opacity: 0,
-  },
-  {
+  }, {
     y: 0,
     opacity: 1,
     ease: "power4.out",
@@ -375,22 +362,20 @@ hover.forEach((e) => e.addEventListener("mouseout", () => mouseOut(e)));
 
 function mouseOver(e) {
   e.classList.add("active");
-  setTimeout(() => {
-    var index = 0;
-    const slides = document.querySelectorAll(
-      ".img_work_outer.active > .popupebox .slides"
-    );
-    const classHide = "slides-hidden",
-      count = slides.length;
-    // console.log(count);
-  
-    function nextSlide() {
-      slides[index++ % count].classList.add(classHide);
-      slides[index % count].classList.remove(classHide);
-      setTimeout(nextSlide, 2000);
-    }
-    nextSlide();
-  }, 400);
+  var index = 0;
+  const slides = document.querySelectorAll(
+    ".img_work_outer.active > .popupebox .slides"
+  );
+  const classHide = "slides-hidden",
+    count = slides.length;
+  // console.log(count);
+
+  function nextSlide() {
+    slides[index++ % count].classList.add(classHide);
+    slides[index % count].classList.remove(classHide);
+    setTimeout(nextSlide, 2000);
+  }
+  nextSlide();
 
 }
 
@@ -558,6 +543,42 @@ function DeveloperImg() {
     },
   });
 }
+gsap.utils.toArray(".animationimage").forEach((box) => {
+  gsap.set(box, {
+    opacity: 0,
+    ease: "power1.out",
+  });
+  gsap.to(box, {
+    scrollTrigger: {
+      trigger: box,
+      markers: false,
+      scrub: 1,
+      start: () => "top 50%",
+      end: () => "top 50%",
+    },
+
+    opacity: 1,
+  });
+});
+// gsap.utils.toArray("main>section").forEach((box) => {
+//   gsap.set(box, {
+//     y: 10,
+//     scale: 0.9,
+//     ease: "power1.out",
+//   });
+//   gsap.to(box, {
+//     scrollTrigger: {
+//       trigger: box,
+//       markers: false,
+//       scrub: 2,
+//       start: () => "top 80%",
+//       end: () => "top 80%",
+//     },
+//     y: 0,
+//     scale: 1,
+//   });
+// });
+
 
 function WhatIdo() {
   const doc = this.getSVGDocument();
@@ -620,3 +641,114 @@ for (let i = 0; i < refs.length; i++) {
   refs[i].addEventListener("load", window[refs[i].getAttribute("data-svg")]);
 }
 // https://www.milena-alexandrova.com/
+
+
+// ============
+// Custom login
+// =============
+document.getElementsByClassName("viewall")[0].addEventListener("click", function () {
+  document.getElementById('id01').style.display = 'block';
+});
+
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+const aesGcmEncrypt = async function (plaintext, password) {
+  try {
+    const pwUtf8 = new TextEncoder().encode(password);
+    const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8);
+    const iv = new Uint8Array(12);
+    const alg = {
+      name: 'AES-GCM',
+      iv: iv
+    };
+    const key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
+    const ptUint8 = new TextEncoder().encode(plaintext);
+    const ctBuffer = await crypto.subtle.encrypt(alg, key, ptUint8);
+    const ctArray = Array.from(new Uint8Array(ctBuffer));
+    const ctStr = ctArray.map(byte => String.fromCharCode(byte)).join('');
+    const ctBase64 = btoa(ctStr);
+    const ivHex = Array.from(iv).map(b => ('00' + b.toString(16)).slice(-2)).join('');
+    return ivHex + ctBase64;
+  } catch (err) {}
+} //func aesGcmEncrypt
+
+// const aesGcmDecrypt = async function (ciphertext, password) {
+//   try {
+//     const pwUtf8 = new TextEncoder().encode(password);
+//     const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8);
+//     const iv = ciphertext.slice(0, 24).match(/.{2}/g).map(byte => parseInt(byte, 16));
+//     const alg = { name: 'AES-GCM', iv: new Uint8Array(iv) };
+//     const key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['decrypt']);
+//     const ctStr = atob(ciphertext.slice(24));
+//     const ctUint8 = new Uint8Array(ctStr.match(/[\s\S]/g).map(ch => ch.charCodeAt(0)));
+//     const plainBuffer = await crypto.subtle.decrypt(alg, key, ctUint8);
+//     const plaintext = new TextDecoder().decode(plainBuffer);
+//     return plaintext;
+//   } catch (err) { }
+// } //func aesGcmDecrypt
+
+
+//Decrypt and Encrypt
+const $result = document.querySelector('.result .resultContent');
+const errorMsg = "WHoops, something went wrong";
+let success;
+
+document.querySelector('.encrypt form').addEventListener('submit', async (event,success) => {
+  event.preventDefault();
+
+  try {
+    const text = event.target[0].value;
+    // const text = "DM@denish";
+    const pass = event.target[1].value;
+
+
+
+    const result = await aesGcmEncrypt(text, pass);
+
+    // $result.innerHTML = result ? result : errorMsg;
+    // console.log(text, pass);
+    // console.log(result);
+    // fe0d823a0f642bfbbf3ed895zpxvTo94D35f48O5TxpOBFpqHNBJzg
+    if (result === "000000000000000000000000YPBD5utmoXO6CPAB0jurGp2KgWJ6+/gMhW3ihMw=") {
+
+        let elements = document.querySelectorAll(".img_work_outer");
+         elements.forEach((element) => {
+         element.classList.remove('private');
+         modal.style.display = "none";
+      });
+
+    }
+
+  } catch (e) {
+    // $result.innerHTML = errorMsg
+  }
+});
+
+// document.getElementsByClassName("viewall")[0].addEventListener("click", validation);
+
+// function validation() {
+//   let value = prompt("Please Provide password for access all projects", "");
+
+
+
+//   if (value != null && value === "xyz" )  {
+//     console.log("123");
+//    let elements = document.querySelectorAll(".img_work_outer");
+//     elements.forEach((element) => {
+//       element.classList.remove('private');
+//     });
+
+
+
+//   }else{
+//     alert("Please Enter Valid Password")
+//   }
+// }
