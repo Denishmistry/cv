@@ -740,15 +740,9 @@ function mouseOut(e) {
   e.classList.remove("active");
 }
 
+//  Play
 var video = document.getElementById("bgvid");
 
-
-function myFunction() {
-  if (video.paused) {
-
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
+setTimeout(() => {
+  video.play();
+}, 2000);
