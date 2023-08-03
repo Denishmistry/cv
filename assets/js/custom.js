@@ -29,6 +29,8 @@ $(window).on("load resize", function () {
   }
 });
 
+
+
 //=========================
 //  Header Sticky top
 // ==========================
@@ -53,21 +55,107 @@ ScrollTrigger.create({
 // expiriance section
 // =====================
 
-if (window.innerWidth > 1200) {
-  gsap.utils.toArray(".expirince-list li").forEach((box) => {
-    gsap.to(box, {
+// if (window.innerWidth > 1200) {
+//   gsap.utils.toArray(".expirince-list li").forEach((box) => {
+//     gsap.to(box, {
+//       scrollTrigger: {
+//         trigger: box,
+//         markers: false,
+//         scrub: 2,
+//         toggleClass: "active",
+//         start: "0% 45%",
+//         end: "100% 50%",
+//       },
+//     });
+//   });
+// }
+
+
+// gsap.utils.toArray(".expirince-list li").forEach((box) => {
+//   gsap.set(box, {
+//     opacity: 0,
+
+//   });
+//   gsap.to(box, {
+//     scrollTrigger: {
+//       trigger: box,
+//       markers: true,
+//       scrub: 1,
+//       start: "top 60%",
+//       end: "10% 60%",
+//     },
+//     opacity: 1,
+//     scale: 1,
+//   });
+// });
+// function ExpstaggerAnim(selector, staggerTime, y) {
+
+
+//   const selcetor = document.querySelectorAll(selector);
+
+//   gsap.set(selcetor, {
+//     opacity: 0,
+//     y: y
+//   });
+//   ScrollTrigger.batch(selcetor, {
+//     // markers: true,
+//     start: "top 50%",
+//     end: "bottom 50%",
+//     scrub: 2,
+//     markers: true,
+//     onEnter: batch => gsap.to(batch, {
+//       opacity: 1,
+
+//     }),
+
+//     onLeave: batch => gsap.set(batch, {
+//       opacity: 0,
+
+//     }),
+//     onEnterBack: batch => gsap.to(batch, {
+//       opacity: 1,
+
+//     }),
+//     onLeaveBack: batch => gsap.set(batch, {
+//       opacity: 0,
+
+//     }),
+//   });
+//   // ScrollTrigger.addEventListener("refreshInit", () => gsap.set(selcetor, {
+//   //   opacity: 0,
+//   // }));
+// }
+// ExpstaggerAnim(".expirince-list li", 0.20, 0);
+
+function Imageslider(selcetor) {
+
+  gsap.utils.toArray(selcetor).forEach(element => {
+    gsap.set(element, {
+      x:0,
+      y:0,
+      z:0,
+      rotationX: 0,
+    })
+    gsap.to(element, {
+      ease: "power1.in",
       scrollTrigger: {
-        trigger: box,
-        markers: false,
-        scrub: 2,
-        toggleClass: "active",
-        start: "0% 45%",
-        end: "100% 50%",
+
+        trigger: element,
+        scrub:true,
+        start: "top 40%",
+        end:  "+=300",
+        // markers: true,
       },
-    });
+      x:0,
+      y:0,
+      z:-500,
+      rotationX: -20,
+    })
   });
 }
-
+Imageslider(".expirince-list li>div", 0.20, 0);
+// https://www.remarkgroup.com/en/tech-solutions
+// https://greensock.com/forums/topic/28889-scrolltrigger-reveal-elements-one-by-one-on-entering-and-leaving-scroller-area/
 // =============
 // brain Image
 // =============
@@ -171,7 +259,7 @@ let tltransition = new TimelineMax({
   })
   .fromTo(
     $frameRed,
-    1.3, {
+    0.5, {
       scaleX: 0,
     }, {
       scaleX: 1,
@@ -181,7 +269,7 @@ let tltransition = new TimelineMax({
   )
   .fromTo(
     $frameBlack,
-    1.3, {
+    .5, {
       scaleX: 0,
     }, {
       scaleX: 1,
@@ -192,7 +280,7 @@ let tltransition = new TimelineMax({
   )
   .fromTo(
     $logo,
-    1.6, {
+    0.5, {
       xPercent: -150,
       autoAlpha: 0,
     }, {
@@ -287,7 +375,7 @@ gsap.from(".Welcome-section h1", 1.8, {
   y: 200,
   opacity: 0,
   ease: "power4.out",
-  delay: 4,
+  delay: 3,
 });
 
 gsap.utils.toArray(".whatido").forEach((box) => {
@@ -318,7 +406,7 @@ gsap.fromTo(
     y: 0,
     opacity: 1,
     ease: "power4.out",
-    delay: 5,
+    delay: 4,
   }
 );
 
@@ -569,7 +657,7 @@ const $result = document.querySelector('.result .resultContent');
 const errorMsg = "WHoops, something went wrong";
 let success;
 
-document.querySelector('.encrypt form').addEventListener('submit', async (event,success) => {
+document.querySelector('.encrypt form').addEventListener('submit', async (event, success) => {
   event.preventDefault();
 
   try {
@@ -583,10 +671,10 @@ document.querySelector('.encrypt form').addEventListener('submit', async (event,
 
     if (result === "000000000000000000000000YPBD5utmoXO6CPAB0jurGp2KgWJ6+/gMhW3ihMw=") {
 
-        let elements = document.querySelectorAll(".img_work_outer");
-         elements.forEach((element) => {
-         element.classList.remove('private');
-         modal.style.display = "none";
+      let elements = document.querySelectorAll(".img_work_outer");
+      elements.forEach((element) => {
+        element.classList.remove('private');
+        modal.style.display = "none";
       });
 
     }
@@ -617,35 +705,50 @@ var hover = document.querySelectorAll(".img_work_outer");
 // hover.forEach((e) => e.addEventListener("mouseout", () => mouseOut(e)));
 hover.forEach((e) => e.addEventListener("mouseenter", () => mouseOver(e)));
 hover.forEach((e) => e.addEventListener("mouseleave", () => mouseOut(e)));
-console.log(hover)
+// console.log(hover)
 function mouseOver(e) {
   e.classList.add("active");
   slider();
 }
 var timer;
 
+
+
+
+function slider() {
+
+  var index = 0;
+  const slides = document.querySelectorAll(
+    ".img_work_outer.active > .popupebox .slides"
+  );
+  const classHide = "slides-hidden",
+    count = slides.length;
+  //  console.log(count);
+
+  function nextSlide() {
+    slides[index++ % count].classList.add(classHide);
+    slides[index % count].classList.remove(classHide);
+    timer = setTimeout(nextSlide, 2000);
+  }
+
+  nextSlide();
+
+}
+
 function mouseOut(e) {
-  clearTimeout(timer)
+  clearTimeout(timer);
   e.classList.remove("active");
 }
 
+var video = document.getElementById("bgvid");
 
-function slider(){
-  
-    var index = 0;
-    const slides = document.querySelectorAll(
-      ".img_work_outer.active > .popupebox .slides"
-    );
-    const classHide = "slides-hidden",
-      count = slides.length;
-      //  console.log(count);
-  
-    function nextSlide() {
-      slides[index++ % count].classList.add(classHide);
-      slides[index % count].classList.remove(classHide);
-      timer = setTimeout(nextSlide, 2000);
-    }
-    
-    nextSlide();
-  
+
+function myFunction() {
+  if (video.paused) {
+
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
   }
+}

@@ -765,10 +765,12 @@ footer {
 .introduction {
   /* height: 100vh; */
   position: relative;
+  padding-top: 50px;
 }
 
 .introduction p {
-  font-size: 14px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 /* Text translate */
@@ -788,7 +790,7 @@ footer {
   padding: 0 50px;
   display: flex;
   width: 150%;
-  transition: all ease 0.5s;
+  /* transition: all ease 0.5s; */
   font-style: italic;
 }
 
@@ -823,8 +825,10 @@ footer {
 
 
   /*   outline: 6px dotted teal; */
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.8;
+  font-weight: 300;
+  font-style: normal;
   /*    display: block-inline !important;  */
 }
 
@@ -832,19 +836,20 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 80px;
 }
 
 .introduction p {
-  width: 40%;
-  max-width: 400px;
+  width: 60%;
+  max-width: 600px;
   margin-left: 50px;
   margin-top: 200px;
 
 }
 
 .introduction .animationimage {
-  width: 45%;
-
+  width: 25%;
+  min-width: 200px;
 
 }
 
@@ -927,6 +932,18 @@ object.animationimage:hover #Path_109 {
   align-items: center;
 }
 
+.whatido__titleblock.in-column{
+  flex-direction: column;
+align-items: start;
+}
+.whatido__titleblock.in-column .section-line{
+  margin-left: 0;
+}
+.whatido__titleblock.in-column .sticky{
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .whatido__description {
   display: flex;
   flex-wrap: wrap;
@@ -941,7 +958,13 @@ object.animationimage:hover #Path_109 {
   margin: 30px 20px 20px 0;
   max-width: 27%;
 }
-
+.expirince-block {
+  display: flex;
+  flex-direction: row;
+}
+.expirince-block .expirince-list{
+  margin-left: 50px;
+}
 /* Work section */
 /* .img_work_outer{
   display: inline-flex;
@@ -1365,6 +1388,22 @@ img {vertical-align: middle;}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
+}
+
+.Welcome-section{
+  position: relative;
+}
+.Welcome-section video{
+
+position: absolute;
+top: 0;
+left: 0;
+/* bottom: 0; */
+right: 0;
+width: 100%;
+height: 80vh;
+filter: grayscale(1) brightness(0.5);
+z-index: -1;
 }
